@@ -7,6 +7,10 @@ class TestBinarySearchTree(unittest.TestCase):
 	"""
 	Initialization
 	"""
+	def test_instantiation_with_value(self):
+		fake_value = "Fake"
+		bst = BinarySearchTree(fake_value)
+		self.assertEqual(fake_value, bst.value)
 
 	def test_instantiation(self):
 		"""
