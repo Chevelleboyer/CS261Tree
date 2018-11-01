@@ -1,12 +1,20 @@
-# Run with `python3 -m unittest test_tree`
+# Run me with `python -m unittest test_bst`
 
 import unittest
 
-class TestTree(unittest.TestCase):
+class TestBinarySearchTree(unittest.TestCase):
+	"""
+	Initialization
+	"""
 
-	def test_failure(self):
-		self.fail("Intentional failure.")
-
+	def test_instantiation(self):
+		"""
+		A BinarySearchTree exsists.
+		"""
+		try:
+			BinarySearchTree()
+		except NameError:
+			self.fail("Could not instantiate BinarySearchTree")
 
 if __name__ == '__main__':
 	unittest.main()
