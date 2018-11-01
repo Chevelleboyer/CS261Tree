@@ -1,6 +1,7 @@
 # Run me with `python -m unittest test_bst`
 
 import unittest
+from bst import BinarySearchTree
 
 class TestBinarySearchTree(unittest.TestCase):
 	"""
