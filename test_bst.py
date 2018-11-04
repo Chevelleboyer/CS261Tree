@@ -23,7 +23,6 @@ class TestBinarySearchTree(unittest.TestCase):
 
 
 	def test_instantiation(self):
-		
 		"""
 		A BinarySearchTree exsists.
 		"""
