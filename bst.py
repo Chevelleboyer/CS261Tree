@@ -1,9 +1,8 @@
 class BinarySearchTree:
-	def __init__(self, root = None, leftChild = None, rightChild = None):
+	def __init__(self, root, leftChild=None, rightChild=None):
 		self.root = root
-		self.leftChild = leftChild
-		self.rightChild = rightChild
+
+	def insertLeft(self, newNode):
+		self.leftChild = newNode
 
 #class TreeNode:
-
-#just do find (acess and find are very similar) find returns the total node with that value, NOT the value the node holds
