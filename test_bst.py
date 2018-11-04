@@ -8,22 +8,22 @@ class TestBinarySearchTree(unittest.TestCase):
 	Initialization
 	"""
 	def test_instantiation_with_value(self):
-		fake_value = "Fake"
+		fake_value = 27
 		bst = BinarySearchTree(fake_value)
 		self.assertEqual(fake_value, bst.root)
-	#def test_check_left(self):
-
-	#def test_check_right(self):
 
 	def test_insert_right_with_no_child(self):
-		aValue = 55
-		bst = BinarySearchTree()
-		if bst.rightChild == None:
-			bst.rightChild = BinarySearchTree(aValue)
+		bst = BinarySearchTree(50)
+		child = BinarySearchTree(70)
+		bst.insertRight(child)
+		self.assertEqual(child, bst.rightChild)
+
+	def test_insert_right_with_child(self):
+		pass
 
 
 	def test_instantiation(self):
-
+		
 		"""
 		A BinarySearchTree exsists.
 		"""
