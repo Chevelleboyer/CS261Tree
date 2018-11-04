@@ -5,4 +5,7 @@ class BinarySearchTree:
 	def insertLeft(self, newNode):
 		self.leftChild = newNode
 
+	def insertRight(self, newNode):
+		self.rightChild = newNode
+
 #class TreeNode:

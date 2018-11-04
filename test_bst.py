@@ -18,7 +18,7 @@ class TestBinarySearchTree(unittest.TestCase):
 		bst.insertLeft(child)
 		self.assertEqual(child, bst.leftChild)
 
-	def test_insert_right_with_child(self):
+	def test_leaf_insert_larger_values_as_left(self):
 		bst = BinarySearchTree(70)
 		child = BinarySearchTree(120)
 		bst.insertRight(child)
