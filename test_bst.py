@@ -31,6 +31,14 @@ class TestBinarySearchTree(unittest.TestCase):
 		child2 = BinarySearchTree(25)
 		bst.insertLeft(child)
 
+	def test_finding_value_smaller_than_root(self):
+		bst = BinarySearchTree(70)
+		bst2 = BinarySearchTree(50)
+		bst3 = BinarySearchTree(100)
+		bst.insertLeft(bst2)
+		bst.insertRight(bst3)
+		bst.find(17)
+
 
 	def test_instantiation(self):
 		"""
