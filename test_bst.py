@@ -4,50 +4,65 @@ import unittest
 from bst import BinarySearchTree
 
 class TestBinarySearchTree(unittest.TestCase):
-	"""
-	Initialization
-	"""
-	def test_instantiation_with_value(self):
-		fake_value = 27
-		bst = BinarySearchTree(fake_value)
-		self.assertEqual(fake_value, bst.root)
-
-	def test_leaf_insert_smaller_values_as_left(self):
-		bst = BinarySearchTree(70)
-		child = BinarySearchTree(50)
-		bst.insertLeft(child)
-		self.assertEqual(child, bst.leftChild)
-
-	def test_leaf_insert_larger_values_as_right(self):
-		bst = BinarySearchTree(70)
-		child = BinarySearchTree(120)
-		bst.insertRight(child)
-		self.assertEqual(child, bst.rightChild)
-
-	def test_nonLeaf_insert_smaller_value_as_left(self):
-		bst = BinarySearchTree(70)
-		child = BinarySearchTree(50)
-		bst.insertLeft(child)
-		child2 = BinarySearchTree(25)
-		bst.insertLeft(child)
-
-	def test_finding_value_smaller_than_root(self):
-		bst = BinarySearchTree(70)
-		bst2 = BinarySearchTree(50)
-		bst3 = BinarySearchTree(100)
-		bst.insertLeft(bst2)
-		bst.insertRight(bst3)
-		bst.find(17)
-
 
 	def test_instantiation(self):
 		"""
 		A BinarySearchTree exsists.
 		"""
 		try:
-			BinarySearchTree(70)
+			BinarySearchTree()
 		except NameError:
 			self.fail("Could not instantiate BinarySearchTree")
+
+	def test_tree_node_initial_value_none(self):
+		bst = BinarySearchTree()
+		self.assertEqual(None, bst.value)
+
+	def test_tree_node_initial_value(self):
+		bst = BinarySearchTree(50)
+		self.assertEqual(50, bst.value)
+
+	def test_tree_node_has_left_and_right_initially_none(self):
+		bst = BinarySearchTree()
+		self.assertEqual(None, bst.left)
+		self.assertEqual(None, bst.right)
+
+	def test_insert_smaller_into_single_level_tree(self):
+		bst = BinarySearchTree(50)
+		insertee = BinarySearchTree(25)
+		bst.insert(insertee)
+		self.assertEqual(insertee, bst.left)
+
+	def test_insert_larger_into_single_level_tree(self):
+		bst = BinarySearchTree(50)
+		insertee = BinarySearchTree(75)
+		bst.insert(insertee)
+		self.assertEqual(insertee, bst.right)
+
+	def test_insert_smaller_into_two_level_tree(self):
+		bst = BinarySearchTree(50)
+		insertee1 = BinarySearchTree(40)
+		insertee2 = BinarySearchTree(25)
+		bst.insert(insertee1)
+		bst.insert(insertee2)
+		self.assertEqual(insertee2, bst.left.left)
+
+	def test_insert_larger_into_two_tree_level(self):
+		bst = BinarySearchTree(50)
+		insertee1 = BinarySearchTree(75)
+		insertee2 = BinarySearchTree(100)
+		bst.insert(insertee1)
+		bst.insert(insertee2)
+		self.assertEqual(insertee2, bst.right.right)
+
+	def test_find_when_only_one_node(self):
+		bst = BinarySearchTree(50)
+		bst.find(50)
+		self.assertEqual(50, bst.value)
+		
+
+
+
 
 if __name__ == '__main__':
 	unittest.main()
