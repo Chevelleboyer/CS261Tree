@@ -58,8 +58,17 @@ class TestBinarySearchTree(unittest.TestCase):
 	def test_find_when_only_one_node(self):
 		bst = BinarySearchTree(50)
 		bst.find(50)
-		self.assertEqual(50, bst.value)
-		
+		self.assertEqual(bst.find(50), bst.value)
+
+	def test_find_with_two_level_tree(self):
+		bst = BinarySearchTree(50)
+		insertee1 = BinarySearchTree(25)
+		insertee2 = BinarySearchTree(75)
+		bst.insert(insertee1)
+		bst.insert(insertee2)
+		bst.find(25)
+		print(bst.left.value)
+		#self.assertEqual(bst.find(25), bst.left.value)
 
 
 
