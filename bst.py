@@ -17,13 +17,14 @@ class BinarySearchTree:
         	else:
         		self.left.insert(insertee)
 
-    def find(self, value):
-    	if value == self.value:
-    		print("True", self.value)
+    def find(self, aValue):
+    	if self.value == aValue:
+    		#print(self.value, aValue)
     		return self.value
     	else:
-    		if value >= self.value:
-    			self.right.find(value)
-    		if value < self.value:
-    			self.left.find(value)
+    		if aValue >= self.value:
+    			self.right.find(aValue)
+    		else:
+    			if aValue < self.value:
+    				self.left.find(aValue)
     
