@@ -66,8 +66,8 @@ class TestBinarySearchTree(unittest.TestCase):
 		insertee2 = BinarySearchTree(75)
 		bst.insert(insertee1)
 		bst.insert(insertee2)
-		print(bst.find(25))
-		#self.assertEqual(bst.find(25), bst.left)
+		bst.find(75)
+		self.assertEqual(bst.find(75), bst.right)
 
 
 
