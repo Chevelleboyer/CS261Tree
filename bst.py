@@ -20,11 +20,16 @@ class BinarySearchTree:
     def find(self, aValue):
     	if self.value == aValue:
     		#print(self.value, aValue)
-    		return self.value
+    		return self
     	else:
-    		if aValue >= self.value:
-    			self.right.find(aValue)
+    		if self.left == None & self.right == None:
+    			return None
     		else:
-    			if aValue < self.value:
-    				self.left.find(aValue)
+    			if aValue >= self.value:
+    				self.right.find(aValue)
+    			else:
+    				if aValue < self.value:
+    					self.left.find(aValue)
+
+    
     
