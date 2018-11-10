@@ -33,5 +33,5 @@ class BinarySearchTree:
                     else:
                         return self.left.find(aValue)
 
-    
-    
+    def traverseInOrder(self):
+        pass
