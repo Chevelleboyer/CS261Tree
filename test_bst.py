@@ -74,6 +74,15 @@ class TestBinarySearchTree(unittest.TestCase):
 		bst.preOrder()
 		self.assertEqual(bst.preOrder(), 25)
 
+	def test_preOrder_with_two_level_tree(self):
+		bst = BinarySearchTree(25)
+		insertee1 = BinarySearchTree(50)
+		insertee2 = BinarySearchTree(20)
+		bst.insert(insertee1)
+		bst.insert(insertee2)
+		bst.preOrder()
+		self.assertEqual(bst.preOrder(), [20, 25, 50])
+
 
 
 

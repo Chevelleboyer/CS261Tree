@@ -35,12 +35,16 @@ class BinarySearchTree:
 
     def preOrder(self):
         print(self.value)
-        return self.value
         if self.left:
             self.left.preOrder()
         if self.right:
             self.right.preOrder()
-
-
+    
+    def inOrder(self):
+        if self.left:
+            self.left.postOrder()
+        if self.right:
+            self.right.postOrder()
+        print(self.value)
 
 
