@@ -93,6 +93,11 @@ class TestBinarySearchTree(unittest.TestCase):
 		bst.inOrder()
 		self.assertEqual(bst.inOrder(), 25)
 
+	def test_delNode_with_single_level_tree(self):
+		bst = BinarySearchTree(25)
+		bst.delNode(25)
+		self.assertEqual(bst, None)
+
 
 
 
