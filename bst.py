@@ -40,7 +40,7 @@ class BinarySearchTree:
         if self.right:
             self.right.preOrder()
     
-    def inOrder(self):
+    def postOrder(self):
         if self.left:
             self.left.postOrder()
         if self.right:
