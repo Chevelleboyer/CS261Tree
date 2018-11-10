@@ -72,7 +72,7 @@ class TestBinarySearchTree(unittest.TestCase):
 	def test_preOrder_with_single_level_tree(self):
 		bst = BinarySearchTree(25)
 		bst.preOrder()
-		self.assertEqual(bst.preOrder(), 25)
+		self.assertEqual(bst.preOrder(), [25])
 
 	def test_preOrder_with_two_level_tree(self):
 		bst = BinarySearchTree(25)
@@ -86,7 +86,12 @@ class TestBinarySearchTree(unittest.TestCase):
 	def test_postOrder_with_single_level_tree(self):
 		bst = BinarySearchTree(25)
 		bst.postOrder()
-		self.assertEqual(bst.postOrder, 25)
+		self.assertEqual(bst.postOrder(), 25)
+
+	def test_inOrder_with_single_level_tree(self):
+		bst = BinarySearchTree(25)
+		bst.inOrder()
+		self.assertEqual(bst.inOrder(), 25)
 
 
 
