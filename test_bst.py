@@ -69,9 +69,10 @@ class TestBinarySearchTree(unittest.TestCase):
 		bst.find(75)
 		self.assertEqual(bst.find(75), bst.right)
 
-	def test_traverseInOrder_with_single_level_tree(self):
+	def test_preOrder_with_single_level_tree(self):
 		bst = BinarySearchTree(25)
-		self.assertEqual(bst.traverseInOrder(), 25)
+		bst.preOrder()
+		self.assertEqual(bst.preOrder(), 25)
 
 
 

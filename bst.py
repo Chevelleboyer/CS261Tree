@@ -33,5 +33,14 @@ class BinarySearchTree:
                     else:
                         return self.left.find(aValue)
 
-    def traverseInOrder(self):
-        pass
+    def preOrder(self):
+        print(self.value)
+        return self.value
+        if self.left:
+            self.left.preOrder()
+        if self.right:
+            self.right.preOrder()
+
+
+
+
