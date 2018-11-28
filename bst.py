@@ -4,6 +4,7 @@ class BinarySearchTree:
         self.value = value
         self.left = None
         self.right = None
+        self.parent = None
 
     def insert(self, insertee):
         if insertee.value >= self.value:
@@ -61,6 +62,22 @@ class BinarySearchTree:
             self.right.inOrder()
 
     def delNode(self, nodeValue):
-        pass
+        if self.value == nodeValue:
+            self.value = None
+            self.left.parent = self.parent
+        else:
+            if nodeValue >= self.value:
+                if self.right == None:
+                    return None
+                else:
+                    return self.right.delNode(nodeValue)
+            else:
+                if nodeValue < self.value:
+                    if self.left == None:
+                        return None
+                    else:
+                        return self.left.delNode(nodeValue)
+
+        
 
 
